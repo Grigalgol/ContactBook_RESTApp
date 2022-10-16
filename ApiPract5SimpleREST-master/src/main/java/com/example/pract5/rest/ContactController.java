@@ -96,13 +96,6 @@ public class ContactController {
             summary = "Контакт удалится из базы данных",
             description = "Нажмите кнопку и вводите данные о контакте, который хотите удалить",
 
-            requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(description = "Описание нашего контакта",
-                    content = @Content(
-                            schemaProperties = {
-                                    @SchemaProperty(name = "phone",schema = @Schema(name = "contact")),
-                                    @SchemaProperty(name = "name",schema = @Schema(name = "contact")),
-                            }
-                    )),
             responses = {@ApiResponse(responseCode = "200",
                     content = @Content(schema = @Schema(implementation = Contact.class),mediaType = MediaType.APPLICATION_JSON_VALUE
                             ,examples = {@ExampleObject(name = "Пример",value ="Объект контакта")}),description = "Контакт успешно удалён"),
